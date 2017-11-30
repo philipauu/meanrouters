@@ -1,0 +1,21 @@
+<form ng-controller="single_patient">
+    <p>
+        <input type="text" ng-model="patient.name">
+    </p>
+    <p>
+        <input type="text" ng-model="patient.gender">
+    </p>
+    <p>
+        <input type="text" ng-model="patient.contact.email">
+    </p>
+    <p>
+        <input type="text" ng-model="patient.contact.cell">
+    </p>
+    <p>
+        <input type="text" ng-model="patient.medical.drug">
+    </p>
+    <p>
+        <input type="text" ng-model="patient.medical.usage">
+    </p>
+    <button ng-click="update(patient)"></button>
+</form>

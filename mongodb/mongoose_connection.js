@@ -26,6 +26,8 @@ var patient = {
     medical: drugs
 }
 
+var patient_schema = new mongoose.Schema(patient);
+
 var PATIENTCLASS = mongoose.model('patients', patient_schema);
 
-module.exports = PATIENTLASS;
+module.exports = PATIENTCLASS;

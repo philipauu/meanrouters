@@ -20,10 +20,10 @@ router.delete('/api/v8/delete/:_id', do_delete);
 function do_get_all(req, res) {
     console.log('reading all patients');
 
-    PATIENTCLASS.find({
+    PATIENTCLASS.find({}, {
             name: 1,
             gender: 1
-        }, {})
+        })
         .then(function (patients) {
             console.log(patients);
             res.json(patients);
@@ -98,16 +98,15 @@ function do_update(req, res) {
     //     }
     // }
 
-};
-
-PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update)
-    .then(function (result) {
-        console.log(result);
-        res.json({
-            message: 'backend updated patient'
+    PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update)
+        .then(function (result) {
+            console.log(result);
+            res.json({
+                message: 'backend updated patient'
+            });
         });
-    });
-}
+
+};
 
 function do_delete(req, res) {
     console.log('deleting patient');
